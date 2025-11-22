@@ -8,12 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --production
 
 # Copy entire project
 COPY . .
 
 # Expose port
+ENV PORT=8080
 EXPOSE 8080
 
 # Start the app
